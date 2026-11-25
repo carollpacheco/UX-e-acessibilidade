@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Guia interativo e acessível sobre Gravitação Universal e Mecânica Orbital.">
+  <title>CosmosLab | Gravitação Universal e Órbitas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
+  <header class="site-header">
+    <div class="container header-content">
+      <div class="logo">
+        <span aria-hidden="true">🪐</span>
+        <strong>CosmosLab</strong>
+      </div>
+
+      <nav aria-label="Navegação Principal">
+        <ul class="nav-list">
+          <li><a href="#teoria">Teoria</a></li>
+          <li><a href="#leis-kepler">Leis de Kepler</a></li>
+          <li><a href="#simulador">Simulador</a></li>
+        </ul>
+      </nav>
+
+      <button id="theme-toggle" class="btn-icon" aria-label="Alternar entre tema claro e escuro" aria-pressed="false">
+        <span id="theme-icon" aria-hidden="true">☀️</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo-principal">
+    <section class="hero">
+      <div class="container">
+        <span class="badge">Física Clássica & Astrofísica</span>
+        <h1>Gravitação Universal e Mecânica Orbital</h1>
+        <p class="lead">
+          Entenda como a mesma força que faz uma maçã cair mantém planetas, luas e satélites artificiais dançando em equilíbrio pelo universo.
+        </p>
+        <div class="hero-actions">
+          <a href="#simulador" class="btn btn-primary">Testar Simulador</a>
+          <a href="#teoria" class="btn btn-secondary">Explorar Conceitos</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="teoria" class="section container">
+      <h2>A Lei da Gravitação Universal</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>O Conceito de Newton</h3>
+          <p>
+            Em 1687, Isaac Newton formulou que dois corpos quaisquer no universo se atraem com uma força diretamente proporcional ao produto de suas massas e inversamente proporcional ao quadrado da distância entre seus centros.
+          </p>
+          <div class="formula-box" role="region" aria-label="Fórmula da Gravitação Universal">
+            <code>F = G · (m₁ · m₂) / r²</code>
+          </div>
+          <ul class="definition-list">
+            <li><strong>F:</strong> Força gravitacional (Newtons)</li>
+            <li><strong>G:</strong> Constante gravitacional (6,674 × 10⁻¹¹ N·m²/kg²)</li>
+            <li><strong>m₁, m₂:</strong> Massas dos corpos (kg)</li>
+            <li><strong>r:</strong> Distância entre os centros (m)</li>
+          </ul>
+        </div>
+
+        <div class="card highlight-card">
+          <h3>Por que a Lua não cai na Terra?</h3>
+          <p>
+            Na verdade, <strong>ela está caindo constantemente!</strong> Porém, a Lua possui uma velocidade tangencial tão alta que, à medida que a gravidade a puxa para baixo, a superfície curva da Terra se afasta na mesma proporção.
+          </p>
+          <p>
+            Esse equilíbrio dinâmico entre <em>inércia</em> (movimento em linha reta) e <em>atração gravitacional</em> é o que chamamos de <strong>órbita</strong>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="leis-kepler" class="section bg-alt">
+      <div class="container">
+        <h2>As Três Leis de Kepler</h2>
+        <p class="section-subtitle">Antes mesmo de Newton explicar o "porquê", Johannes Kepler descreveu o "como" os planetas se movem.</p>
+        
+        <div class="grid-3">
+          <article class="card">
+            <span class="step-number" aria-hidden="true">01</span>
+            <h3>Lei das Órbitas</h3>
+            <p>Os planetas descrevem órbitas elípticas ao redor do Sol, que ocupa um dos focos da elipse.</p>
+          </article>
+
+          <article class="card">
+            <span class="step-number" aria-hidden="true">02</span>
+            <h3>Lei das Áreas</h3>
+            <p>O segmento que liga um planeta ao Sol varre áreas iguais em tempos iguais. Planetas aceleram perto do Sol (periélio) e desaceleram longe dele (afélio).</p>
+          </article>
+
+          <article class="card">
+            <span class="step-number" aria-hidden="true">03</span>
+            <h3>Lei dos Períodos</h3>
+            <p>O quadrado do período orbital de um planeta é proporcional ao cubo do semieixo maior de sua órbita (T² ∝ r³).</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="simulador" class="section container">
+      <h2>Simulador Interativo de Órbita</h2>
+      <p class="section-subtitle">Ajuste a massa do planeta e a velocidade inicial do satélite para observar órbitas circulares, elípticas ou de escape.</p>
+
+      <div class="simulator-wrapper">
+        <div class="canvas-container">
+          <canvas id="orbitCanvas" width="600" height="400" role="img" aria-label="Simulação visual de um satélite orbitando um planeta central"></canvas>
+          <div id="sim-status" class="status-badge" aria-live="polite">Status: Órbita Estável</div>
+        </div>
+
+        <form class="controls-panel" aria-label="Controles do simulador">
+          <div class="control-group">
+            <label for="mass-slider">
+              Massa do Planeta: <strong id="mass-value">1000</strong> un.
+            </label>
+            <input type="range" id="mass-slider" min="400" max="2000" value="1000" step="50">
+          </div>
+
+          <div class="control-group">
+            <label for="velocity-slider">
+              Velocidade Inicial do Satélite: <strong id="velocity-value">2.6</strong> km/s
+            </label>
+            <input type="range" id="velocity-slider" min="1.0" max="4.5" value="2.6" step="0.1">
+          </div>
+
+          <div class="control-group checkbox-group">
+            <input type="checkbox" id="show-vectors" checked>
+            <label for="show-vectors">Mostrar vetores (Velocidade e Gravidade)</label>
+          </div>
+
+          <div class="button-group">
+            <button type="button" id="btn-reset" class="btn btn-primary">Lançar Novamente</button>
+            <button type="button" id="btn-pause" class="btn btn-secondary">Pausar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Desenvolvido com foco em Física, UX e Acessibilidade (WCAG). Pronto para GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
