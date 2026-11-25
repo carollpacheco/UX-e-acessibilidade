@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portal educacional interativo sobre Física Moderna: Relatividade Restrita e Mecânica Quântica, com flashcards acessíveis.">
+  <title>Física Moderna | Relatividade & Quântica</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Fontes do Google para tipografia acadêmica e legível -->
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Lora:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Link de acessibilidade para pular direto ao conteúdo -->
+  <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
+  <header class="cabecalho">
+    <div class="container nav-container">
+      <div class="logo">
+        <span class="logo-icone" aria-hidden="true">⚛️</span>
+        <h1>Cosmos &amp; Quanta</h1>
+      </div>
+      <nav aria-label="Navegação Principal">
+        <ul class="nav-lista">
+          <li><a href="#relatividade">Relatividade</a></li>
+          <li><a href="#quantica">Mecânica Quântica</a></li>
+          <li><a href="#simulador">Simulador</a></li>
+          <li><a href="#flashcards" class="btn-nav">Flashcards</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo-principal">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-texto">
+          <span class="badge">Física do Século XX</span>
+          <h2>As Leis que Redefiniram o Universo</h2>
+          <p>Explore os pilares da Física Moderna: da velocidade absoluta da luz de Einstein às probabilidades subatômicas de Planck e Schrödinger.</p>
+          <div class="hero-acoes">
+            <a href="#flashcards" class="btn btn-primario">Praticar com Flashcards</a>
+            <a href="#relatividade" class="btn btn-secundario">Explorar Teoria</a>
+          </div>
+        </div>
+        <div class="hero-card" aria-hidden="true">
+          <div class="formula-destaque">
+            <p class="formula">E = mc²</p>
+            <p class="formula-legenda">Equivalência Massa-Energia</p>
+          </div>
+          <div class="formula-destaque">
+            <p class="formula">Δx · Δp ≥ ħ / 2</p>
+            <p class="formula-legenda">Princípio da Incerteza de Heisenberg</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção 1: Relatividade -->
+    <section id="relatividade" class="secao">
+      <div class="container">
+        <div class="secao-cabecalho">
+          <h2>01. Teoria da Relatividade Restrita</h2>
+          <p>Proposta por Albert Einstein em 1905, altera nossa compreensão sobre espaço e tempo.</p>
+        </div>
+
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Constância da Luz (c)</h3>
+            <p>A velocidade da luz no vácuo (~299.792 km/s) é a mesma para qualquer observador, independentemente do movimento da fonte.</p>
+          </article>
+          <article class="card">
+            <h3>Dilatação do Tempo</h3>
+            <p>Quanto mais rápido um objeto se move próximo à velocidade da luz, mais devagar o tempo passa para ele em relação a um observador parado.</p>
+          </article>
+          <article class="card">
+            <h3>Contração do Espaço</h3>
+            <p>Objetos em altíssima velocidade sofrem uma redução no seu comprimento na direção do movimento do ponto de vista de quem observa de fora.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção 2: Mecânica Quântica -->
+    <section id="quantica" class="secao secao-alternativa">
+      <div class="container">
+        <div class="secao-cabecalho">
+          <h2>02. Fundamentos da Mecânica Quântica</h2>
+          <p>O comportamento da matéria e da energia nas escalas atômica e subatômica.</p>
+        </div>
+
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Quantização de Energia</h3>
+            <p>Max Planck descobriu que a energia não é emitida de forma contínua, mas em pequenos pacotes discretos chamados <strong>quanta</strong> (fótons).</p>
+          </article>
+          <article class="card">
+            <h3>Dualidade Onda-Partícula</h3>
+            <p>Elétrons e fótons exibem propriedades tanto de partículas localizadas quanto de ondas de interferência, dependendo de como são medidos.</p>
+          </article>
+          <article class="card">
+            <h3>Superposição Quântica</h3>
+            <p>Um sistema quântico pode existir em múltiplos estados simultaneamente até que uma medição force o colapso para um único resultado.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção 3: Mini Simulador Interativo -->
+    <section id="simulador" class="secao">
+      <div class="container">
+        <div class="simulador-box">
+          <div class="simulador-info">
+            <h2>Calculadora de Dilatação Temporal</h2>
+            <p>Veja quanto tempo passa na Terra para cada <strong>1 ano</strong> viajando em uma nave espacial em altíssima velocidade.</p>
+          </div>
+          
+          <div class="simulador-controles">
+            <label for="velocidade-slider">
+              Velocidade da Nave: <strong id="velocidade-valor">50%</strong> da velocidade da luz (c)
+            </label>
+            <input 
+              type="range" 
+              id="velocidade-slider" 
+              min="0" 
+              max="99" 
+              value="50"
+              aria-describedby="resultado-tempo"
+            >
+            <div class="resultado-box" id="resultado-tempo" aria-live="polite">
+              Tempo decorrido na Terra: <strong>1.15 anos</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção 4: Flashcards Melhorados e Acessíveis -->
+    <section id="flashcards" class="secao secao-alternativa">
+      <div class="container">
+        <div class="secao-cabecalho">
+          <h2>03. Flashcards de Revisão</h2>
+          <p>Clique no cartão ou pressione <kbd>Espaço</kbd> / <kbd>Enter</kbd> para virar. Use as setas do teclado para navegar.</p>
+        </div>
+
+        <div class="flashcard-app">
+          <!-- Barra de Progresso e Filtros -->
+          <div class="flashcard-topo">
+            <div class="filtros" role="group" aria-label="Filtrar flashcards por tema">
+              <button type="button" class="btn-filtro ativo" data-categoria="todos">Todos (6)</button>
+              <button type="button" class="btn-filtro" data-categoria="relatividade">Relatividade (3)</button>
+              <button type="button" class="btn-filtro" data-categoria="quantica">Quântica (3)</button>
+            </div>
+            <div class="progresso-texto" id="contador-cards" aria-live="polite">
+              Cartão 1 de 6
+            </div>
+          </div>
+
+          <div class="barra-progresso-container" aria-hidden="true">
+            <div class="barra-progresso-fill" id="barra-progresso"></div>
+          </div>
+
+          <!-- Área do Cartão 3D -->
+          <div class="flashcard-palco">
+            <div 
+              class="flashcard" 
+              id="flashcard" 
+              tabindex="0" 
+              role="button" 
+              aria-pressed="false"
+              aria-label="Cartão de estudo. Pressione Enter ou Espaço para ver a resposta."
+            >
+              <div class="flashcard-face flashcard-frente">
+                <span class="card-tag" id="card-categoria">Relatividade</span>
+                <h3 id="card-pergunta">Carregando pergunta...</h3>
+                <span class="card-dica">Clique ou aperte Espaço para virar ↻</span>
+              </div>
+              
+              <div class="flashcard-face flashcard-verso">
+                <span class="card-tag tag-resposta">Resposta</span>
+                <p id="card-resposta">Carregando resposta...</p>
+                <span class="card-dica">Clique ou aperte Espaço para voltar ↺</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controles de Navegação -->
+          <div class="flashcard-controles">
+            <button type="button" id="btn-anterior" class="btn btn-secundario" aria-label="Cartão anterior">
+              ← Anterior
+            </button>
+            <button type="button" id="btn-embaralhar" class="btn btn-secundario" aria-label="Embaralhar cartões">
+              🔀 Embaralhar
+            </button>
+            <button type="button" id="btn-proximo" class="btn btn-primario" aria-label="Próximo cartão">
+              Próximo →
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape-conteudo">
+      <p>Projeto Educacional de Física Moderna • Desenvolvido com foco em Acessibilidade (WCAG) e UX.</p>
+      <p class="rodape-sub">Pronto para hospedagem no GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

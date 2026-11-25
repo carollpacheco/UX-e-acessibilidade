@@ -1,0 +1,560 @@
+/* =========================================
+   VARIÁVEIS E PALETA DE CORES (TONS MARROM)
+   ========================================= */
+   :root {
+    /* Fundos */
+    --bg-creme-claro: #FAF6F0;
+    --bg-pergaminho: #F0E6D8;
+    --bg-cartao: #FFFFFF;
+    
+    /* Tons de Marrom */
+    --marrom-espresso: #2C1A11;     /* Texto principal - alto contraste */
+    --marrom-cafe: #4A2E1B;         /* Títulos e botões primários */
+    --marrom-canela: #7C4D2B;       /* Destaques e hover */
+    --marrom-caramelo: #A66E43;     /* Bordas e detalhes */
+    --marrom-suave: #634838;        /* Texto secundário */
+    
+    /* Bordas e Sombras */
+    --borda-sutil: #DECBB7;
+    --sombra-card: 0 10px 25px -5px rgba(44, 26, 17, 0.12);
+    --foco-anel: #C85A17;           /* Cor de alto destaque para foco de teclado */
+  
+    /* Tipografia */
+    --fonte-titulo: 'Lora', Georgia, serif;
+    --fonte-corpo: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+  
+  /* =========================================
+     RESET E ACESSIBILIDADE GLOBAL
+     ========================================= */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: var(--fonte-corpo);
+    background-color: var(--bg-creme-claro);
+    color: var(--marrom-espresso);
+    line-height: 1.65;
+  }
+  
+  /* Foco visível claro para navegação por teclado */
+  :focus-visible {
+    outline: 3px solid var(--foco-anel);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  
+  /* Link de pular para conteúdo (Leitores de tela / Teclado) */
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    background: var(--marrom-espresso);
+    color: var(--bg-creme-claro);
+    padding: 12px 20px;
+    z-index: 1000;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 0 0 8px 8px;
+    transition: top 0.2s ease;
+  }
+  
+  .skip-link:focus {
+    top: 0;
+  }
+  
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  
+  /* =========================================
+     CABEÇALHO E NAVEGAÇÃO
+     ========================================= */
+  .cabecalho {
+    background-color: var(--marrom-espresso);
+    color: var(--bg-creme-claro);
+    padding: 18px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logo h1 {
+    font-family: var(--fonte-titulo);
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .nav-lista {
+    display: flex;
+    list-style: none;
+    gap: 24px;
+    align-items: center;
+  }
+  
+  .nav-lista a {
+    color: var(--bg-pergaminho);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+  }
+  
+  .nav-lista a:hover {
+    color: #E6B88A;
+  }
+  
+  .nav-lista .btn-nav {
+    background-color: var(--marrom-canela);
+    color: #FFFFFF;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+  }
+  
+  .nav-lista .btn-nav:hover {
+    background-color: var(--marrom-caramelo);
+    color: #FFFFFF;
+  }
+  
+  /* =========================================
+     HERO SECTION
+     ========================================= */
+  .hero {
+    padding: 72px 0;
+    background: linear-gradient(135deg, var(--bg-pergaminho) 0%, var(--bg-creme-claro) 100%);
+    border-bottom: 1px solid var(--borda-sutil);
+  }
+  
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 40px;
+    align-items: center;
+  }
+  
+  .badge {
+    display: inline-block;
+    background-color: var(--marrom-cafe);
+    color: var(--bg-creme-claro);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  
+  .hero-texto h2 {
+    font-family: var(--fonte-titulo);
+    font-size: 2.6rem;
+    line-height: 1.2;
+    color: var(--marrom-espresso);
+    margin-bottom: 16px;
+  }
+  
+  .hero-texto p {
+    font-size: 1.1rem;
+    color: var(--marrom-suave);
+    margin-bottom: 28px;
+  }
+  
+  .hero-acoes {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  
+  .hero-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .formula-destaque {
+    background-color: var(--marrom-espresso);
+    color: var(--bg-creme-claro);
+    padding: 24px;
+    border-radius: 12px;
+    border-left: 6px solid var(--marrom-caramelo);
+    box-shadow: var(--sombra-card);
+  }
+  
+  .formula {
+    font-family: var(--fonte-titulo);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #E6B88A;
+  }
+  
+  .formula-legenda {
+    font-size: 0.9rem;
+    color: var(--bg-pergaminho);
+    margin-top: 4px;
+  }
+  
+  /* =========================================
+     BOTÕES
+     ========================================= */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-family: var(--fonte-corpo);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+  }
+  
+  .btn-primario {
+    background-color: var(--marrom-cafe);
+    color: #FFFFFF;
+  }
+  
+  .btn-primario:hover {
+    background-color: var(--marrom-canela);
+    transform: translateY(-1px);
+  }
+  
+  .btn-secundario {
+    background-color: transparent;
+    border-color: var(--marrom-cafe);
+    color: var(--marrom-cafe);
+  }
+  
+  .btn-secundario:hover {
+    background-color: var(--bg-pergaminho);
+  }
+  
+  /* =========================================
+     SEÇÕES E CARDS TEÓRICOS
+     ========================================= */
+  .secao {
+    padding: 64px 0;
+  }
+  
+  .secao-alternativa {
+    background-color: var(--bg-pergaminho);
+    border-top: 1px solid var(--borda-sutil);
+    border-bottom: 1px solid var(--borda-sutil);
+  }
+  
+  .secao-cabecalho {
+    max-width: 680px;
+    margin-bottom: 40px;
+  }
+  
+  .secao-cabecalho h2 {
+    font-family: var(--fonte-titulo);
+    font-size: 2rem;
+    color: var(--marrom-cafe);
+    margin-bottom: 8px;
+  }
+  
+  .secao-cabecalho p {
+    color: var(--marrom-suave);
+    font-size: 1.05rem;
+  }
+  
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 24px;
+  }
+  
+  .card {
+    background-color: var(--bg-cartao);
+    padding: 28px;
+    border-radius: 12px;
+    border: 1px solid var(--borda-sutil);
+    box-shadow: var(--sombra-card);
+  }
+  
+  .card h3 {
+    font-family: var(--fonte-titulo);
+    font-size: 1.3rem;
+    color: var(--marrom-cafe);
+    margin-bottom: 12px;
+  }
+  
+  .card p {
+    color: var(--marrom-espresso);
+    font-size: 0.98rem;
+  }
+  
+  /* =========================================
+     SIMULADOR INTERATIVO
+     ========================================= */
+  .simulador-box {
+    background-color: var(--marrom-espresso);
+    color: var(--bg-creme-claro);
+    padding: 36px;
+    border-radius: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: center;
+    box-shadow: var(--sombra-card);
+  }
+  
+  .simulador-info h2 {
+    font-family: var(--fonte-titulo);
+    color: #E6B88A;
+    margin-bottom: 10px;
+  }
+  
+  .simulador-controles {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  input[type="range"] {
+    width: 100%;
+    accent-color: #E6B88A;
+    height: 8px;
+    cursor: pointer;
+  }
+  
+  .resultado-box {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 16px;
+    border-radius: 8px;
+    border-left: 4px solid #E6B88A;
+    font-size: 1.15rem;
+  }
+  
+  /* =========================================
+     FLASHCARDS (UX & ACESSIBILIDADE)
+     ========================================= */
+  kbd {
+    background-color: var(--bg-cartao);
+    border: 1px solid var(--marrom-caramelo);
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 0.85rem;
+    font-family: monospace;
+    color: var(--marrom-espresso);
+  }
+  
+  .flashcard-app {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  
+  .flashcard-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  
+  .filtros {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  
+  .btn-filtro {
+    background-color: var(--bg-cartao);
+    border: 1px solid var(--marrom-caramelo);
+    color: var(--marrom-cafe);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .btn-filtro.ativo,
+  .btn-filtro:hover {
+    background-color: var(--marrom-cafe);
+    color: #FFFFFF;
+  }
+  
+  .progresso-texto {
+    font-weight: 600;
+    color: var(--marrom-cafe);
+    font-size: 0.95rem;
+  }
+  
+  .barra-progresso-container {
+    width: 100%;
+    height: 8px;
+    background-color: var(--borda-sutil);
+    border-radius: 4px;
+    margin-bottom: 24px;
+    overflow: hidden;
+  }
+  
+  .barra-progresso-fill {
+    height: 100%;
+    width: 16.6%;
+    background-color: var(--marrom-canela);
+    transition: width 0.3s ease;
+  }
+  
+  /* Palco 3D do Cartão */
+  .flashcard-palco {
+    perspective: 1000px;
+    margin-bottom: 24px;
+  }
+  
+  .flashcard {
+    width: 100%;
+    min-height: 290px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+    cursor: pointer;
+    border-radius: 16px;
+  }
+  
+  .flashcard.virado {
+    transform: rotateY(180deg);
+  }
+  
+  .flashcard-face {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 16px;
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    box-shadow: var(--sombra-card);
+    border: 2px solid var(--marrom-caramelo);
+  }
+  
+  .flashcard-frente {
+    background-color: var(--bg-cartao);
+    color: var(--marrom-espresso);
+  }
+  
+  .flashcard-verso {
+    background-color: var(--marrom-espresso);
+    color: var(--bg-creme-claro);
+    transform: rotateY(180deg);
+    border-color: var(--marrom-espresso);
+  }
+  
+  .card-tag {
+    background-color: var(--bg-pergaminho);
+    color: var(--marrom-cafe);
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .tag-resposta {
+    background-color: var(--marrom-canela);
+    color: #FFFFFF;
+  }
+  
+  .flashcard-frente h3 {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    line-height: 1.4;
+  }
+  
+  .flashcard-verso p {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    max-width: 560px;
+  }
+  
+  .card-dica {
+    font-size: 0.85rem;
+    opacity: 0.75;
+  }
+  .flashcard-controles {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    }
+    /* =========================================
+    RODAPÉ
+    ========================================= */
+    .rodape {
+    background-color: var(--marrom-espresso);
+    color: var(--bg-pergaminho);
+    text-align: center;
+    padding: 32px 0;
+    font-size: 0.9rem;
+    }
+    .rodape-sub {
+    color: #C4A78B;
+    margin-top: 6px;
+    font-size: 0.82rem;
+    }
+    /* =========================================
+    RESPONSIVIDADE E PREFERÊNCIA DE MOVIMENTO
+    ========================================= */
+    @media (max-width: 768px) {
+    .hero-grid,
+    .simulador-box {
+    grid-template-columns: 1fr;
+    }
+    .hero-texto h2 {
+    font-size: 2rem;
+    }
+    .flashcard {
+    min-height: 330px;
+    }
+    .flashcard-controles {
+    justify-content: center;
+    }
+    }
+    /* Respeita usuários com sensibilidade a animações */
+    @media (prefers-reduced-motion: reduce) {
+    html {
+    scroll-behavior: auto;
+    }
+    .flashcard {
+    transition: none;
+    }
+    }
+    
+  
